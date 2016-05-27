@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim' "plugin manager
 Plugin 'sjl/gundo.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
 
 
 " All of your Plugins must be added before the following line
@@ -79,10 +80,15 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+"hacks to avoid disabled arrows to insert unwanted text
 nnoremap OA <nop>
 nnoremap OB <nop>
 nnoremap OC <nop>
 nnoremap OD <nop>
+inoremap OA <nop>
+inoremap OB <nop>
+inoremap OC <nop>
+inoremap OD <nop>
 
 " easier mappings for moving within splits
 nnoremap <c-h> <c-w><c-h>
