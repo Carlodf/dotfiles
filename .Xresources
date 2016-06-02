@@ -78,7 +78,7 @@ URxvt.boldItalicFont:      xft:Monospace:pixelsize=16:bold:italic:antialias=true
 ! URxvt.internalBorder:      0
 ! URxvt.externalBorder:      0
 !
-! URxvt.scrollBar:           false
+ URxvt.scrollBar:           false
 
 !URxvt.internalBorder:      0
 !URxvt.externalBorder:      0

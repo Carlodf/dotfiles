@@ -80,15 +80,10 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-"hacks to avoid disabled arrows to insert unwanted text
 nnoremap OA <nop>
 nnoremap OB <nop>
 nnoremap OC <nop>
 nnoremap OD <nop>
-inoremap OA <nop>
-inoremap OB <nop>
-inoremap OC <nop>
-inoremap OD <nop>
 
 " easier mappings for moving within splits
 nnoremap <c-h> <c-w><c-h>
@@ -117,7 +112,9 @@ nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
 vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
 
 " mapping for Gundo
-nnoremap <F5> :gUNDOtOGGLE<cr>
+nnoremap <F5> :GundoToggle<cr>
+" maps to F5 on my mac keyboard
+nnoremap [15~ :GundoToggle<cr>
 
 " Appareance --------------------------------------------------------------{{{1
 
@@ -168,12 +165,18 @@ function! s:StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-" Fix typos for :: in cpp files
+" bunch of specific remappings for cpp files.
 augroup cppfiles
     augroup !
+    " Fix typos for :: in cpp files
     autocmd Filetype cpp inoremap <buffer> ;: ::
     autocmd Filetype cpp inoremap <buffer> :; ::
     autocmd Filetype cpp inoremap <buffer> ;; ::
+    " Auto close parenthesis and quotes
+    autocmd Filetype cpp inoremap <buffer> {<cr> {<cr>}<esc>O
+    autocmd Filetype cpp inoremap <buffer> (<space> ()<esc>i
+    autocmd Filetype cpp inoremap <buffer> <<space> <><esc>i
+    autocmd Filetype cpp inoremap <buffer> "<space> ""<esc>i
 augroup END
 
 " Toggles quick fix window open/close
@@ -190,3 +193,5 @@ function! s:QuickfixToggle()
         let g:quickfix_is_open = 1
     endif
 endfunction
+
+:source ~/.vim/experimental.vim
