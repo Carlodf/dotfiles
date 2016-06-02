@@ -50,6 +50,9 @@ set softtabstop=4
 set list
 " enavle undofile
 set undofile
+set undodir=~/.vim/undo/
+" set directory for swap files
+set directory=~/.vim/swp/
 " show diff in vertical split and use filler for deleted lines
 set diffopt=filler,vertical
 set visualbell
