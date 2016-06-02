@@ -11,7 +11,8 @@ Plugin 'sjl/gundo.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
-
+Plugin 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -62,6 +63,15 @@ augroup vim_file_group
     autocmd!
     autocmd Filetype vim setlocal foldmethod=marker
 augroup END
+
+" Settings for ultisnip plugin --------------------------------------------{{{2
+" Trigger configuration.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" :UltiSnipsEdit opens to a split window.
+let g:UltiSnipsEditSplit="vertical"
 
 " Mappings ----------------------------------------------------------------{{{1
 
