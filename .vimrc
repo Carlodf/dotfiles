@@ -11,7 +11,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 
 " All of your Plugins must be added before the following line
