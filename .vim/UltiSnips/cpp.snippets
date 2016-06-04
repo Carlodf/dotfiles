@@ -1,0 +1,76 @@
+snippet #in "#include<header>" b
+#include<${1:${VISUAL:header.hpp}}>
+endsnippet
+
+snippet ns "namespace .. (namespace)"
+namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet cl "class .. (class)"
+class ${1:`!p 
+word = snip.basename
+cname = word[0].upper() + word[1:]
+snip.rv = cname or "name"`}
+{
+public:
+	${1/(\w+).*/$1/} (${2:arguments});
+
+private:
+	${0:/* data */}
+};
+endsnippet
+
+snippet map "std::map (map)"
+std::map<${1:key}, ${2:value}> ${3:${VISUAL:map}}$0;
+endsnippet
+
+snippet vector "std::vector (v)"
+std::vector<${1:char}> ${2:${VISUAL:vector}}$0;
+endsnippet
+
+snippet sizet "std::size_t var"
+std::size_t ${1:${VISUAL:var}}$0
+endsnippet
+
+snippet cref "const var&" i
+const ${1:${VISUAL:var}}&$0
+endsnippet
+
+snippet if "if (condition)"
+if (${1:condition})
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet forit "for (auto it=v.begin(); it != v.end(); ++it)" b
+for (auto ${1:it}=${2:container}.begin(); $1 != $2.end(); ++$1)
+{
+	$0
+}
+endsnippet
+
+snippet forin "for (x=0; x < n; ++x)" b
+for (std::size_t ${1:x}=${2:0}; $1${3:<}${4:n}; ${5:++}$1)
+{
+	$0
+}
+endsnippet
+
+snippet fore "for (auto var : container)"
+for (auto ${1:var} : ${2:container})
+{
+	$0
+}
+endsnippet
+
+snippet au "auto var = expression"
+auto ${1:var} = ${2:expr}$0;
+endsnippet
+
+snippet aucr "const auto& var = expression"
+const auto& ${1:var} = ${2:expr}$0;
+endsnippet

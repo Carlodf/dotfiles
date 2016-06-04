@@ -11,7 +11,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
-"Plugin 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 
 " All of your Plugins must be added before the following line
@@ -66,12 +66,13 @@ augroup END
 
 " Settings for ultisnip plugin --------------------------------------------{{{2
 " Trigger configuration.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<c-b>'
+let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 " :UltiSnipsEdit opens to a split window.
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 " Mappings ----------------------------------------------------------------{{{1
 
@@ -145,7 +146,6 @@ set listchars=tab:▸\ ,eol:¬
 
 "Airline settings ---------------------------------------------------------{{{2
 let g:airline_theme= 'badwolf'
-
 
 " Functions ---------------------------------------------------------------{{{1
 
