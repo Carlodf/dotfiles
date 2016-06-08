@@ -1,4 +1,14 @@
-snippet #in "#include<header>" b
+# some python utility functions
+global !p
+
+def capitalize_word(word):
+    return word[0].upper() + word[1:]
+
+endglobal
+
+
+# c++ snippets
+snippet in "#include<header>" b
 #include<${1:${VISUAL:header.hpp}}>
 endsnippet
 
@@ -11,9 +21,7 @@ endsnippet
 
 snippet cl "class .. (class)"
 class ${1:`!p 
-word = snip.basename
-cname = word[0].upper() + word[1:]
-snip.rv = cname or "name"`}
+snip.rv = capitalize_word(snip.basename) or "name"`}
 {
 public:
 	${1/(\w+).*/$1/} (${2:arguments});
